@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from "./Form"
+
+const tasks = [
+  {id: 1, content: "Przejść na reacta", done: false},
+  {id: 2, content: "Zjeść obiad", done: true}
+];
+
+const hideDoneTasks = false;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <main>
+      <header className="header">
+        <h1 className="header__text">Lista zadań</h1>
       </header>
-    </div>
+      <div className="container">
+        <Form/>
+      </div>
+      <div className="container">
+        <div className="form__container form__container--withButtons">
+          <span className="form__title">Lista zadań</span>
+          <div className="form__buttons"></div>
+        </div>
+        <div className="form__container form__container--tasks">
+          <ul className="taskList">
+          </ul>
+        </div>
+      </div>
+    </main>
   );
 }
 

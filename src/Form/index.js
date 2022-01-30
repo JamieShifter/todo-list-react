@@ -1,3 +1,5 @@
+import "./style.css";
+
 const Form = () => (
     <form className="form">
         <div className="form__container">

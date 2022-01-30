@@ -1,4 +1,5 @@
-import Form from "./Form"
+import Form from "./Form";
+import Tasks from "./Tasks";
 
 const tasks = [
   {id: 1, content: "Przejść na reacta", done: false},
@@ -22,8 +23,7 @@ function App() {
           <div className="form__buttons"></div>
         </div>
         <div className="form__container form__container--tasks">
-          <ul className="taskList">
-          </ul>
+          <Tasks tasks={tasks} hideDoneTasks={hideDoneTasks}/>
         </div>
       </div>
     </main>

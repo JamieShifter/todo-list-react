@@ -19,19 +19,6 @@
     }
 }
 
-
-.form__container--withButtons {
-    display: flex;
-    justify-content: space-between;
-}
-
-@media (max-width: 767px) {
-    .form__container--withButtons {
-        display: flex;
-        flex-flow: column wrap;
-    }
-}
-
 @media (max-width: 767px) {
     .form__buttons {
         display: flex;

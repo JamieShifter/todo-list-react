@@ -3,24 +3,6 @@
     font-weight: 700;
 }
 
-.form__container {
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid rgb(201, 201, 201);
-}
-
-@media (max-width: 767px) {
-    .form__container--submit {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
-}
-
-.form__container--submit {
-    display: flex;
-}
-
 .form__task {
     flex-grow: 1;
     margin-right: 20px;

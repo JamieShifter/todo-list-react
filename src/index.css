@@ -7,7 +7,7 @@ html{
   box-sizing: inherit;
 }
 
-.body {
+body {
   background-color: rgb(226, 226, 226);
   margin: auto;
   max-width: 1000px;
@@ -21,9 +21,4 @@ html{
   padding-bottom: 10px;
 }
 
-.container {
-  background-color: rgb(255, 255, 255);
-  margin: 15px;
-  box-shadow: 8px 8px 10px -12px rgba(136, 136, 148, 1);
-}
 

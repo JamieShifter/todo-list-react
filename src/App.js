@@ -25,6 +25,16 @@ function App() {
     setTasks(tasks => tasks.filter(task => task.id !== id));
   }
 
+  const toggleTaskDone = (id) => {
+    setTasks(tasks => tasks.map(task => {
+      if(task.id === id) {
+        return {...task, done: !task.done}
+      }
+
+      return task;
+    }))
+  }
+
   return (
     <main>
       <Header title="Lista zadań" />
@@ -39,6 +49,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             removeTask={removeTask}
+            toggleTaskDone={toggleTaskDone}
           />
         }
         extraHeaderContent={

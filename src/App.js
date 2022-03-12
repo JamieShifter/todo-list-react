@@ -8,12 +8,22 @@ import "./index.css";
 
 
 function App() {
+
   const [tasks, setTasks] = useState(
-    [
-      { id: 1, content: "Przejść na reacta", done: false },
-      { id: 2, content: "Zjeść obiad", done: true }
-    ]
-  );
+      !localStorage.getItem("tasks") 
+      ? 
+      [
+        { id: 1, content: "Przejść na reacta", done: false },
+        { id: 2, content: "Zjeść obiad", done: true }
+      ]
+      : 
+      JSON.parse(localStorage.getItem("tasks"))
+    
+  )
+
+  const saveTasksToLocalStorage = () => {localStorage.setItem("tasks", JSON.stringify(tasks));}
+  saveTasksToLocalStorage();
+  
 
   const [hideDone, setHideDone] = useState(false);
 
@@ -23,6 +33,7 @@ function App() {
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
+    saveTasksToLocalStorage();
   }
 
   const toggleTaskDone = (id) => {
@@ -33,6 +44,7 @@ function App() {
 
       return task;
     }))
+    saveTasksToLocalStorage();
   }
 
   const setAllDone = () => {
@@ -40,6 +52,7 @@ function App() {
       ...task,
       done: true
     })))
+    saveTasksToLocalStorage();
   }
 
   const addNewTask = (content) => {
@@ -51,6 +64,7 @@ function App() {
         id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1
       }
     ])
+    saveTasksToLocalStorage();
   }
 
   return (

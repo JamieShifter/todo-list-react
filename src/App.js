@@ -8,18 +8,12 @@ import "./index.css";
 
 
 function App() {
+  const taskList = [
+    { id: 1, content: "Przejść na reacta", done: false },
+    { id: 2, content: "Zjeść obiad", done: true }
+  ]
 
-  const [tasks, setTasks] = useState(
-      !localStorage.getItem("tasks") 
-      ? 
-      [
-        { id: 1, content: "Przejść na reacta", done: false },
-        { id: 2, content: "Zjeść obiad", done: true }
-      ]
-      : 
-      JSON.parse(localStorage.getItem("tasks"))
-    
-  )
+  const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : taskList)
 
   const saveTasksToLocalStorage = () => {localStorage.setItem("tasks", JSON.stringify(tasks));}
   saveTasksToLocalStorage();

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -15,8 +15,9 @@ function App() {
 
   const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : taskList)
 
-  const saveTasksToLocalStorage = () => {localStorage.setItem("tasks", JSON.stringify(tasks));}
-  saveTasksToLocalStorage();
+  useEffect(() => {
+    {localStorage.setItem("tasks", JSON.stringify(tasks));}
+  }, [tasks])
   
 
   const [hideDone, setHideDone] = useState(false);
@@ -27,7 +28,6 @@ function App() {
 
   const removeTask = (id) => {
     setTasks(tasks => tasks.filter(task => task.id !== id));
-    saveTasksToLocalStorage();
   }
 
   const toggleTaskDone = (id) => {
@@ -38,7 +38,6 @@ function App() {
 
       return task;
     }))
-    saveTasksToLocalStorage();
   }
 
   const setAllDone = () => {
@@ -46,7 +45,6 @@ function App() {
       ...task,
       done: true
     })))
-    saveTasksToLocalStorage();
   }
 
   const addNewTask = (content) => {
@@ -58,7 +56,6 @@ function App() {
         id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1
       }
     ])
-    saveTasksToLocalStorage();
   }
 
   return (

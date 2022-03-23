@@ -1,21 +1,19 @@
-import "./style.css";
+import { FilterButton } from "./styled.js";
 
 const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
     <div className="form__buttons">
         {tasks.length > 0 && (
             <>
-                <button
+                <FilterButton
                     onClick={toggleHideDone}
-                    className="form__button"
                 >
                     {hideDone ? "Pokaż" : "Ukryj"} ukończone
-                </button>
-                <button
+                </FilterButton>
+                <FilterButton
                     onClick={setAllDone}
-                    className="form__button"
                     disabled={tasks.every(({ done }) => done)}>
                     Ukończ wszystkie
-                </button>
+                </FilterButton>
             </>)}
     </div>
 );

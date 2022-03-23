@@ -5,7 +5,18 @@ import Buttons from "./Buttons";
 import Container from "./Container";
 import Header from "./Header";
 import "./index.css";
+import styled, { ThemeProvider } from "styled-components";
 
+const theme = {
+  colors: {
+    primaryColor: "teal",
+    textColor: "rgb(26, 26, 26)",
+    backgroundColor: "rgb(255, 255, 255)"
+  },
+  breakpoints: {
+    mobile: 767
+  }
+}
 
 function App() {
   const taskList = [
@@ -16,9 +27,9 @@ function App() {
   const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : taskList)
 
   useEffect(() => {
-    {localStorage.setItem("tasks", JSON.stringify(tasks));}
+    { localStorage.setItem("tasks", JSON.stringify(tasks)); }
   }, [tasks])
-  
+
 
   const [hideDone, setHideDone] = useState(false);
 
@@ -59,7 +70,7 @@ function App() {
   }
 
   return (
-    <main>
+    <ThemeProvider theme={theme}>
       <Header title="Lista zadań" />
       <Container
         title="Dodaj nowe zadanie"
@@ -84,7 +95,7 @@ function App() {
           />
         }
       />
-    </main>
+    </ThemeProvider>
   );
 }
 

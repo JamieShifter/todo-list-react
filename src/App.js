@@ -5,7 +5,7 @@ import Buttons from "./Buttons";
 import Container from "./Container";
 import Header from "./Header";
 import "./index.css";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 const theme = {
   colors: {
@@ -27,7 +27,7 @@ function App() {
   const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : taskList)
 
   useEffect(() => {
-    { localStorage.setItem("tasks", JSON.stringify(tasks)); }
+    localStorage.setItem("tasks", JSON.stringify(tasks)); 
   }, [tasks])
 
 

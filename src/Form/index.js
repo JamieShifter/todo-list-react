@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./style.css";
 import { MultiPurposeContainer } from "../Container/styled";
 import { FormInput, FormSubmit } from "./styled"
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./style.css";
+import { MultiPurposeContainer } from "../Container/styled";
+import { FormInput, FormSubmit } from "./styled"
 
 const Form = ({addNewTask}) => {
     const [newTaskContent, setNewTaskContent] = useState("");
@@ -19,18 +21,15 @@ const Form = ({addNewTask}) => {
 
 
     return (
-        <form
-            onSubmit={onFormSubmit}
-            className="form">
-            <div className="form__container form__container--submit">
-                <input
+        <form onSubmit={onFormSubmit}>
+            <MultiPurposeContainer submit>
+                <FormInput
                     value={newTaskContent}
                     onChange={({target}) => setNewTaskContent(target.value)}
-                    className="form__task"
                     placeholder="Co jest do zrobienia?"
                 />
-                <button className="form__submit">Dodaj zadanie</button>
-            </div>
+                <FormSubmit>Dodaj zadanie</FormSubmit>
+            </MultiPurposeContainer>
         </form>
     )
 };

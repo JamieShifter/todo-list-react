@@ -18,7 +18,12 @@ export const MultiPurposeContainer = styled.div`
         ${(props) => props.withButtons && css`
             display: flex;
             flex-flow: column wrap;
-        `};    
+        `}; 
+        
+        ${(props) => props.submit && css`
+            display: flex;
+            flex-flow: column wrap;
+        `};
     }
 `;
 

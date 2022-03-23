@@ -1,9 +1,10 @@
 import { MainContainer, MultiPurposeContainer } from "./styled.js";
+import {FormTitle} from "../Form/styled";
 
 const Container = ({title, body, extraHeaderContent}) => (
   <MainContainer>
       <MultiPurposeContainer withButtons>
-        <span className="form__title">{title}</span>
+        <FormTitle>{title}</FormTitle>
         {extraHeaderContent}
       </MultiPurposeContainer>
       <MultiPurposeContainer>

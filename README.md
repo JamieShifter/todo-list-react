@@ -32,8 +32,9 @@ And if for some reason you decide to hide tasks that are done - use the "Ukryj u
 - normalize.css
 - google fonts
 - JS(ES6 standard)
-- React
+- React, hooks
 - Webpack
+- styled components
 
 
 

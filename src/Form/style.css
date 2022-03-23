@@ -44,3 +44,14 @@
     background-color: rgb(44, 202, 202);
 }
 
+.form__container--submit {
+    display: flex;
+  }
+
+@media (max-width: 767px) {
+    .form__container--submit {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+  }

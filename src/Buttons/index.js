@@ -1,7 +1,7 @@
-import { FilterButton } from "./styled.js";
+import { FilterButton, ButtonsArea } from "./styled.js";
 
 const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
-    <div className="form__buttons">
+    <ButtonsArea>
         {tasks.length > 0 && (
             <>
                 <FilterButton
@@ -15,7 +15,7 @@ const Buttons = ({ tasks, hideDone, toggleHideDone, setAllDone }) => (
                     Ukończ wszystkie
                 </FilterButton>
             </>)}
-    </div>
+    </ButtonsArea>
 );
 
 export default Buttons;

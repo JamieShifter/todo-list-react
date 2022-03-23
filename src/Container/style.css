@@ -22,14 +22,5 @@
   border-bottom: 1px solid rgb(201, 201, 201);
 }
 
-@media (max-width: 767px) {
-  .form__container--submit {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-  }
-}
 
-.form__container--submit {
-  display: flex;
-}
+

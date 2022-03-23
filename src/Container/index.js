@@ -1,15 +1,15 @@
-import "./style.css";
+import { MainContainer, MultiPurposeContainer } from "./styled.js";
 
 const Container = ({title, body, extraHeaderContent}) => (
-    <div className="container">
-        <div className="form__container form__container--withButtons">
-          <span className="form__title">{title}</span>
-          {extraHeaderContent}
-        </div>
-        <div className="form__container form__container--tasks">
-          {body}
-        </div>
-      </div>
+  <MainContainer>
+      <MultiPurposeContainer withButtons>
+        <span className="form__title">{title}</span>
+        {extraHeaderContent}
+      </MultiPurposeContainer>
+      <MultiPurposeContainer>
+        {body}
+      </MultiPurposeContainer>
+    </MainContainer>
 );
 
 export default Container;

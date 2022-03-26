@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Container from "./Container";
 import Header from "./Header";
+import { useTasks } from "./useTasks";
 import "./index.css";
 import { ThemeProvider } from "styled-components";
 
@@ -19,55 +20,19 @@ const theme = {
 }
 
 function App() {
-  const taskList = [
-    { id: 1, content: "Przejść na reacta", done: false },
-    { id: 2, content: "Zjeść obiad", done: true }
-  ]
-
-  const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : taskList)
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks)); 
-  }, [tasks])
-
-
   const [hideDone, setHideDone] = useState(false);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
-  const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
-  }
-
-  const toggleTaskDone = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, done: !task.done }
-      }
-
-      return task;
-    }))
-  }
-
-  const setAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({
-      ...task,
-      done: true
-    })))
-  }
-
-  const addNewTask = (content) => {
-    setTasks(tasks => [
-      ...tasks,
-      {
-        content,
-        done: false,
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1
-      }
-    ])
-  }
+  const {
+    tasks,
+    addNewTask,
+    removeTask,
+    setAllDone,
+    toggleTaskDone
+  } = useTasks();
 
   return (
     <ThemeProvider theme={theme}>

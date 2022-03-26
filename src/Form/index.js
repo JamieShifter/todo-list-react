@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MultiPurposeContainer } from "../Container/styled";
 import { FormInput, FormSubmit } from "./styled"
 
 const Form = ({addNewTask}) => {
+    const inputRef = useRef(null)
+
     const [newTaskContent, setNewTaskContent] = useState("");
 
     const onFormSubmit = (event) => {
@@ -16,6 +18,7 @@ const Form = ({addNewTask}) => {
 
         addNewTask(trimmedContent);
         setNewTaskContent("");
+        inputRef.current.focus();
     }
 
 
@@ -23,6 +26,7 @@ const Form = ({addNewTask}) => {
         <form onSubmit={onFormSubmit}>
             <MultiPurposeContainer submit>
                 <FormInput
+                    ref={inputRef}
                     value={newTaskContent}
                     onChange={({target}) => setNewTaskContent(target.value)}
                     placeholder="Co jest do zrobienia?"

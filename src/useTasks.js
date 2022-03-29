@@ -5,8 +5,10 @@ export const useTasks = () => {
       { id: 1, content: "Dodać nowe zadanie", done: false },
       { id: 2, content: "Zjeść obiad", done: true }
     ]
+
+    const taskItem = localStorage.getItem("tasks");
   
-    const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : taskList)
+    const [tasks, setTasks] = useState(taskItem ? JSON.parse(taskItem) : taskList)
   
     useEffect(() => {
       localStorage.setItem("tasks", JSON.stringify(tasks)); 

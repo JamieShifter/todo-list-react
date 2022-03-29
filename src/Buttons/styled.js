@@ -4,6 +4,7 @@ export const FilterButton = styled.button`
     background-color: inherit;
     color: ${({theme}) => theme.colors.primaryColor};
     border: none;
+    cursor: pointer;
     transition: 0.5s;
 
     &:hover {

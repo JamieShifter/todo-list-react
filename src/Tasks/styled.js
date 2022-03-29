@@ -26,6 +26,7 @@ export const TaskButton = styled.button`
     background-color: green;
     color: white;
     border: none;
+    cursor: pointer;
     transition: 1s;
 
     &:hover {

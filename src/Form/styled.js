@@ -24,6 +24,7 @@ export const FormSubmit = styled.button`
     color: white;
     font-family: inherit;
     border: none;
+    cursor: pointer;
     padding: 0 20px;
     transition: 1s;
 

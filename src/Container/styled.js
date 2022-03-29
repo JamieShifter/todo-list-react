@@ -12,6 +12,7 @@ export const MultiPurposeContainer = styled.div`
 
     ${(props) => props.submit && css`
         display: flex;
+        border-bottom: none;
     `};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

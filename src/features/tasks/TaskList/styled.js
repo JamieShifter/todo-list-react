@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-export const TaskList = styled.ul`
+export const StyledTasks = styled.ul`
     padding-inline-start: 10px;
     padding-inline-end: 10px;
 `;

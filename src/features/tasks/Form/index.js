@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { MultiPurposeContainer } from "../Container/styled";
+import { MultiPurposeContainer } from "../../../common/Container/styled";
 import { FormInput, FormSubmit } from "./styled"
 
 const Form = ({addNewTask}) => {

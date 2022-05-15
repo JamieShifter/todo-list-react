@@ -33,6 +33,7 @@ And if for some reason you decide to hide tasks that are done - use the "Ukryj u
 - google fonts
 - JS(ES6 standard)
 - React, hooks
+- Redux(store, slices, createAction, immer)
 - Webpack
 - styled components
 

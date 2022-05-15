@@ -14,6 +14,9 @@ export const useTasks = () => {
       localStorage.setItem("tasks", JSON.stringify(tasks)); 
     }, [tasks])
   
+
+    // DEPRECATED
+    
     const removeTask = (id) => {
       setTasks(tasks => tasks.filter(task => task.id !== id));
     }

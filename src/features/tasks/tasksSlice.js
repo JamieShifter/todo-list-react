@@ -14,7 +14,9 @@ const tasksSlice = createSlice({
             tasks.push(payload);
         },
         toggleHideDone: state => {
-            state.hideDone = !state.hideDone
+            if (state.tasks.some(task => task.done === true)) {
+                state.hideDone = !state.hideDone
+            }      
         },
         toggleTaskDone: ({ tasks }, { payload }) => {
             const index = tasks.findIndex(({id}) => id === payload);

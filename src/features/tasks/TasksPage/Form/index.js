@@ -1,9 +1,10 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { MultiPurposeContainer } from "../../../common/Container/styled";
-import { addTask } from "../tasksSlice";
-import { FormInput, FormSubmit } from "./styled"
+import { MultiPurposeContainer } from "../../../../common/Container/styled";
+import Input from "../../Input";
+import { addTask } from "../../tasksSlice";
+import { FormSubmit } from "./styled"
 
 const Form = () => {
     const inputRef = useRef(null)
@@ -35,7 +36,7 @@ const Form = () => {
     return (
         <form onSubmit={onFormSubmit}>
             <MultiPurposeContainer submit>
-                <FormInput
+                <Input
                     ref={inputRef}
                     value={newTaskContent}
                     onChange={({target}) => setNewTaskContent(target.value)}

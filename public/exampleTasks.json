@@ -1,0 +1,8 @@
+[
+    { 
+        "id": 1, "content": "Dodać nowe zadanie", "done": false
+    },
+    { 
+        "id": 2, "content": "Zjeść obiad", "done": true
+    }
+]

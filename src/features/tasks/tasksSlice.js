@@ -14,21 +14,21 @@ const tasksSlice = createSlice({
         toggleHideDone: state => {
             if (state.tasks.some(task => task.done === true)) {
                 state.hideDone = !state.hideDone
-            }      
+            }
         },
         toggleTaskDone: ({ tasks }, { payload: task_id }) => {
-            const index = tasks.findIndex(({id}) => id === task_id);
+            const index = tasks.findIndex(({ id }) => id === task_id);
             tasks[index].done = !tasks[index].done;
         },
-        removeTask: ({tasks}, {payload: task_id}) => {
-            const index = tasks.findIndex(({id}) => id === task_id);
+        removeTask: ({ tasks }, { payload: task_id }) => {
+            const index = tasks.findIndex(({ id }) => id === task_id);
             tasks.splice(index, 1);
         },
         setAllDone: state => {
             state.tasks.map(task => task.done = true);
         },
-        fetchExampleTasks: () => {},
-        setTasks: (state, {payload: tasks}) => {
+        fetchExampleTasks: () => { },
+        setTasks: (state, { payload: tasks }) => {
             state.tasks = tasks;
         }
     },
@@ -37,4 +37,19 @@ const tasksSlice = createSlice({
 export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, fetchExampleTasks, setTasks } = tasksSlice.actions;
 export const selectTasks = state => state.tasks.tasks;
 export const selectHideDone = state => selectTasks(state).hideDone;
+export const getTaskById = (state, taskId) =>
+    selectTasks(state).find(({ id }) => id === taskId);
+    
+export const selectTasksByQuery = (state, query) => {
+    const tasks = selectTasks(state);
+
+    // ważne! jeśli query jest puste, zwróć wszystkie taski
+    if(!query || query.trim() === "") {
+        return tasks;
+    };
+
+    return selectTasks(state).filter(({content}) => content.toUpperCase().includes(query.trim().toUpperCase()));
+}
+    
+
 export default tasksSlice.reducer;

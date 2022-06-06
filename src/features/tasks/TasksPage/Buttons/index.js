@@ -1,6 +1,7 @@
-import { FilterButton, ButtonsArea } from "./styled.js";
+import { ButtonsArea } from "./styled.js";
+import { FilterButton } from "../styled.js";
 import { useSelector, useDispatch } from "react-redux";
-import { selectTasks, selectHideDone, toggleHideDone, setAllDone, fetchExampleTasks } from "../../tasksSlice.js";
+import { selectTasks, selectHideDone, toggleHideDone, setAllDone} from "../../tasksSlice.js";
 
 const Buttons = () => {
     const tasks = useSelector(selectTasks);
@@ -8,9 +9,6 @@ const Buttons = () => {
     const dispatch = useDispatch();
     return (
         <ButtonsArea>
-            <FilterButton onClick={() => dispatch(fetchExampleTasks())}>
-                Pobierz przykładowe zadania
-            </FilterButton>
             {tasks.length > 0 && (
                 <>
                     <FilterButton

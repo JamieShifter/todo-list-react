@@ -6,6 +6,7 @@ import Input from "../../Input";
 import { addTask } from "../../tasksSlice";
 import { FormSubmit } from "./styled"
 
+
 const Form = () => {
     const inputRef = useRef(null)
 
@@ -39,10 +40,11 @@ const Form = () => {
                 <Input
                     ref={inputRef}
                     value={newTaskContent}
-                    onChange={({target}) => setNewTaskContent(target.value)}
+                    onChange={({ target }) => setNewTaskContent(target.value)}
                     placeholder="Co jest do zrobienia?"
                 />
                 <FormSubmit>Dodaj zadanie</FormSubmit>
+                
             </MultiPurposeContainer>
         </form>
     )

@@ -5,7 +5,8 @@ const tasksSlice = createSlice({
     name: 'tasks',
     initialState: {
         tasks: getTasksFromLocalStorage(),
-        hideDone: false
+        hideDone: false,
+        fetchingStatus: false
     },
     reducers: {
         addTask: ({ tasks }, { payload: task }) => {
@@ -27,29 +28,36 @@ const tasksSlice = createSlice({
         setAllDone: state => {
             state.tasks.map(task => task.done = true);
         },
-        fetchExampleTasks: () => { },
+        fetchExampleTasks: (state) => {
+            state.fetchingStatus = true;
+        },
         setTasks: (state, { payload: tasks }) => {
+            state.tasks = tasks;
+        },
+        finishFetching: (state, { payload: tasks }) => {
+            state.fetchingStatus = false;
             state.tasks = tasks;
         }
     },
 });
 
-export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, fetchExampleTasks, setTasks } = tasksSlice.actions;
+export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, fetchExampleTasks, setTasks, finishFetching } = tasksSlice.actions;
 export const selectTasks = state => state.tasks.tasks;
 export const selectHideDone = state => selectTasks(state).hideDone;
 export const getTaskById = (state, taskId) =>
     selectTasks(state).find(({ id }) => id === taskId);
-    
+export const selectFetchingStatus = state => state.tasks.fetchingStatus;
+
 export const selectTasksByQuery = (state, query) => {
     const tasks = selectTasks(state);
 
     // ważne! jeśli query jest puste, zwróć wszystkie taski
-    if(!query || query.trim() === "") {
+    if (!query || query.trim() === "") {
         return tasks;
     };
 
-    return selectTasks(state).filter(({content}) => content.toUpperCase().includes(query.trim().toUpperCase()));
+    return selectTasks(state).filter(({ content }) => content.toUpperCase().includes(query.trim().toUpperCase()));
 }
-    
+
 
 export default tasksSlice.reducer;

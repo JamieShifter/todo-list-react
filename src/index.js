@@ -5,13 +5,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store'
+import { ThemeProvider } from 'styled-components';
+import {theme} from "./theme.js"
 
 ReactDOM.render(
+  <ThemeProvider theme={theme}>
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 

@@ -1,13 +1,11 @@
-import { ThemeProvider } from "styled-components";
 import Container from "../../common/Container";
 import Header from "../../common/Header";
-import { theme } from "../tasks/TasksPage";
 
 
 function Author() {
 
     return (
-        <ThemeProvider theme={theme}>
+        <>
             <Header title="O autorze" />
             <Container
                 title="Jakub Szczechowicz"
@@ -36,7 +34,7 @@ function Author() {
                     </>
                 }
             />
-        </ThemeProvider>
+        </>
     );
 }
 

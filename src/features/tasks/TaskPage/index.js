@@ -15,8 +15,8 @@ function TaskPage() {
             <GeneralContainer>
                 <Header title="Szczegóły zadania" />
                 <Container
-                    title={task ? task.content : "Nie znaleziono zadania:("}
-                    body={task.done ? "Ukończono" : "Nie ukończono"}
+                    title={task ? task.content : "Nie znaleziono zadania🤔"}
+                    body={task ? (task.done ? "Ukończono" : "Nie ukończono") : ""}
                 />
             </GeneralContainer>
         </SuperContainer>

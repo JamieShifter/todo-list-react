@@ -30,6 +30,9 @@ export const MultiPurposeContainer = styled.div`
 
 export const MainContainer = styled.div`
     background-color: rgb(255, 255, 255);
-    margin: 15px;
+    margin: 7px;
     box-shadow: 8px 8px 10px -12px rgba(136, 136, 148, 1);
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
 `;

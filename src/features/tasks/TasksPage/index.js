@@ -6,29 +6,32 @@ import Header from "../../../common/Header";
 import "../../../index.css";
 import { Search } from "./Search";
 import { ExampleTasksButton } from "./ExampleTasksButton";
+import { GeneralContainer, SuperContainer } from "./styled";
 
 function TasksPage() {
 
   return (
-   <>
-      <Header title="Lista zadań" />
-      <Container
-        title={"Dodaj nowe zadanie"}
-        body={<Form />}
-        extraHeaderContent={<ExampleTasksButton/>}
-      />
+    <SuperContainer>
+      <GeneralContainer>
+        <Header title="Lista zadań" />
+        <Container
+          title={"Dodaj nowe zadanie"}
+          body={<Form />}
+          extraHeaderContent={<ExampleTasksButton />}
+        />
 
-      <Container
-        title="Wyszukaj zadanie"
-        body={<Search />}
-      />
+        <Container
+          title="Wyszukaj zadanie"
+          body={<Search />}
+        />
 
-      <Container
-        title="Lista zadań"
-        body={<TaskList />}
-        extraHeaderContent={<Buttons />}
-      />
-    </>
+        <Container
+          title="Lista zadań"
+          body={<TaskList />}
+          extraHeaderContent={<Buttons />}
+        />
+      </GeneralContainer>
+    </SuperContainer>
   );
 }
 

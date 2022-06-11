@@ -1,19 +1,14 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Author from "./features/author/Author";
+import Author from "./features/author/index";
 import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
-import { StyledNavLink } from "./styled";
+import { Navigation } from "./common/Navigation";
 
 const App = () => (
     <BrowserRouter basename="/todo-list-react">
-        <nav>
-            <ul>
-                <li><StyledNavLink to="/zadania">Zadania</StyledNavLink></li>
-                <li><StyledNavLink to="/author">O Autorze</StyledNavLink></li>
-            </ul>
-        </nav>
+        <Navigation />
         <Switch>
             <Route path="/zadania/:id">
                 <TaskPage/>

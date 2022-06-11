@@ -1,8 +1,9 @@
 import { MainContainer, MultiPurposeContainer } from "./styled.js";
-import {FormTitle} from "../../features/tasks/TasksPage/Form/styled";
+import { FormTitle } from "../../features/tasks/TasksPage/Form/styled";
 
-const Container = ({title, body, extraHeaderContent}) => (
-  <MainContainer>
+const Container = ({ title, body, extraHeaderContent }) => (
+  <>
+    <MainContainer>
       <MultiPurposeContainer withButtons>
         <FormTitle>{title}</FormTitle>
         {extraHeaderContent}
@@ -11,6 +12,7 @@ const Container = ({title, body, extraHeaderContent}) => (
         {body}
       </MultiPurposeContainer>
     </MainContainer>
+  </>
 );
 
 export default Container;

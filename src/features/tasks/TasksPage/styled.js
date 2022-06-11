@@ -23,11 +23,20 @@ export const FilterButton = styled.button`
 export const GeneralContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 1000px;
+    max-width: 1000px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        max-width: 100%;
+    }
 `
 
 export const SuperContainer = styled.div`
     display: flex;
     justify-content: center;
     max-width: 100%;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+        max-width: 1000px;
+        flex-flow: column wrap;
+    }
 `

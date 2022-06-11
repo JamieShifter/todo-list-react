@@ -1,7 +1,18 @@
 ## What is this app?
 
-Title is pretty self explanatory, you can add new tasks, mark existing tasks as done and remove them.
-Looks like this:
+Super simple todos type app!
+What you can do here: 
+- add new tasks, 
+- remove them, 
+- mark them as done, 
+- hide all done tasks with one click, 
+- mark every task as done with one click
+- download example tasks
+- filter for existing tasks
+- read details about a task by clicking it OR putting it's id into URL
+- and of course read something about the author
+
+Take a peek:
 ![To-Do-List](./src/images/instruction.gif "To-Do-List instruction")
 
 
@@ -10,6 +21,8 @@ Here it is: [Page](https://jamieshifter.github.io/todo-list-react/)
 ***
 
 ## Step by step
+
+To download some example tasks to get you started, click "Pobierz przykładowe zadania"
 
 To add new task, simply write it in the top text field and click the submit button "Dodaj zadanie"
 
@@ -23,6 +36,10 @@ Whenever you decide that you want to mark all tasks as done - use the appropriat
 
 And if for some reason you decide to hide tasks that are done - use the "Ukryj ukończone", which you can revert any time
 
+To filter for existing task - start typing in the search field
+
+To access task details, click it's title
+
 ***
 
 ## Tech
@@ -32,11 +49,22 @@ And if for some reason you decide to hide tasks that are done - use the "Ukryj u
 - normalize.css
 - google fonts
 - JS(ES6 standard)
-- React, hooks
+- React
+- Create-React-App
+- React Hooks
+- React Router
 - Redux(store, slices, createAction, immer)
+- Redux (Toolkit)
+- Redux-Saga
 - Webpack
 - styled components
-
+- Immutability
+- Git
+- GitHub Pages
+- NPM
+- Webpack
+- NPM styled-components
+- Error Handling /try-catch/
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

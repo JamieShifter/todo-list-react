@@ -43,7 +43,7 @@ const tasksSlice = createSlice({
 
 export const { addTask, toggleHideDone, toggleTaskDone, removeTask, setAllDone, fetchExampleTasks, setTasks, finishFetching } = tasksSlice.actions;
 export const selectTasks = state => state.tasks.tasks;
-export const selectHideDone = state => selectTasks(state).hideDone;
+export const selectHideDone = state => state.tasks.hideDone;
 export const getTaskById = (state, taskId) => 
     selectTasks(state).find(({ id }) => id === taskId);
     

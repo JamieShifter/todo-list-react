@@ -12,7 +12,7 @@ What you can do here:
 - read details about a task by clicking it OR putting it's id into URL
 - and of course read something about the author
 
-Take a peek:
+
 ![To-Do-List](./src/images/instruction.gif "To-Do-List instruction")
 
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, {css} from "styled-components";
 
 export const StyledTasks = styled.ul`
@@ -64,3 +65,20 @@ export const TaskContent = styled.span`
         text-decoration: line-through;
     `};
 `;
+
+export const TaskLink = styled(Link)`
+    text-decoration: none;
+    background-color: inherit;
+    color: ${({ theme }) => theme.colors.primaryColor};
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+        color: rgb(15, 163, 163);
+    }
+
+    &:disabled {
+        color: gray;
+    }
+`   

@@ -6,7 +6,7 @@ export const NavbarContainer = styled.nav`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: teal;
+    background-color: ${({ theme }) => theme.colors.primaryColor};
 `
 
 export const StyledNavLink = styled(NavLink)`

@@ -7,7 +7,7 @@ export const FormTitle = styled.span`
 
 export const FormSubmit = styled.button`
     min-height: 40px;
-    background-color: teal;
+    background-color: ${({ theme }) => theme.colors.primaryColor};
     color: white;
     font-family: inherit;
     border: none;

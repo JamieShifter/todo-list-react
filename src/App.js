@@ -1,13 +1,13 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Author from "./features/author/index";
 import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
 import { Navigation } from "./common/Navigation";
 
 const App = () => (
-    <BrowserRouter basename="/todo-list-react">
+    <HashRouter>
         <Navigation />
         <Switch>
             <Route path="/zadania/:id">
@@ -23,6 +23,6 @@ const App = () => (
                 <Redirect to="/zadania"/>
             </Route>
         </Switch>
-    </BrowserRouter>
+    </HashRouter>
 );
 export default App;
